@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>SoundRock</title>
+  <title></title>
 </head>
+<style>
+
+
+</style>
 <body>
-   <h1>SoundRock</h1>
-   
-    
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+  <p>Iniciar sesion con Facebook:</p>
+  <fb:login-button id="ingresar" scope="public_profile,email,user_friends"
+  onlogin="window.location = 'inicio.html'" >Conectar con facebook</fb:login-button>
+
+  <script src="//http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/fb.js"></script>
+
 </body>
 </html>

@@ -3,11 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SoundRock</title>
-	 <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buscar Musica con Spotify Web API PHP</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <meta name="author" content="@rebelbase">
+    <!-- Open Graph--> 
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sacunao.github.io/soundrock/">
+    <meta property="og:image" content="https://sacunao.github.io/soundrock/img/party.jpg"/>
+    <meta property="og:title" content="SOUNDROCK">
+    <meta property="og:site_name" content="Rockemos tu vida">
+    <meta property="og:description" content="Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos. Nuestra trayectoria de más de 20 años garantizan un servicio de calidad.">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/style2.css">
@@ -18,39 +27,41 @@
       <a href="index.html"><img src="img/logo.png" class="logo1 img-responsive"></a>
   </header>
   <div id="fixed-social">
-    <div><a href="https://www.facebook.com/sharer/sharer.php?u=http://getbootstrap.com/css/#grid" class="ss fixed-facebook" target="_blank"><span>Facebook</span></a></div>
-    <div><a  href="https://twitter.com/share?url=http://open.spotify.com/track/0aXxt38KBHHSmwNsHtIonU" class="ss fixed-twitter" target="_blank"><span>Twitter</span></a></div>
-    <div><a href="https://plus.google.com/share?url=http://open.spotify.com/track/0aXxt38KBHHSmwNsHtIonU" class="ss fixed-gplus" target="_blank"><span>Google+</span></a></div>
-    <div><a href="https://tumblr.com/share?url=http://open.spotify.com/track/0aXxt38KBHHSmwNsHtIonU" class="ss fixed-tumblr" target="_blank"><span>Tumblr</span></a></div>
+    <div><a href="https://www.facebook.com/sharer/sharer.php?u=https://sacunao.github.io/soundrock/" class="ss fixed-facebook" target="_blank"><span>Facebook</span></a></div>
+    <div><a  href="https://twitter.com/share?url=https://sacunao.github.io/soundrock/" class="ss fixed-twitter" target="_blank"><span>Twitter</span></a></div>
+    <div><a href="https://plus.google.com/share?url=https://sacunao.github.io/soundrock/" class="ss fixed-gplus" target="_blank"><span>Google+</span></a></div>
+    <div><a href="https://tumblr.com/share?url=https://sacunao.github.io/soundrock/" class="ss fixed-tumblr" target="_blank"><span>Tumblr</span></a></div>
   </div>
   <section class="principal container">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8">
           <div class="texto-view">
-               <h1>ARMA TU FIESTA</h1>
-               <p class="lh text-white">Somos una empresa con experiencia en el rubro de eventos, no especializamos en armar lo playlist para tu fiesta o evento especial</p>
-               <p class="lh text-white">Arma tu lista buscando los temas de tus artistas favoritos y nosotros te armammos el mix perfecto.</p>
-               <a href="#" class="btn-inscribete">Read More</a>
+               <h1 class="text-center">ARMA TU FIESTA</h1>
+               <div class="col-xs-12 col-sm-12  col-md-12 col-lg-12 none img-top">
+                  <img src="img/party.jpg" class="center-block img-responsive">
+              </div>
+              <div class="m-20">
+                  <p class="lh text-white">SOUNDROCK. Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos. Nuestra trayectoria  de más de  20 años  garantizan un servicio de calidad. Te aseguramos que tu evento tendrá un mix personalizado y perfecto para ti.</p>
+                  <p class="lh text-white">Arma tu lista buscando los temas de tus artistas favoritos y nosotros te armammos el mix perfecto.</p>
+              </div>
           </div>
       </div>
-      <div class="col-xs-12 col-sm-12  col-md-6 col-lg-6 none ">
-          <img src="img/1page-img.jpg" class="img-responsive">
-      </div>
+      
       <div class="container">
           <div class="row">
-              <div class="col-md-12">
-                  <h1>AYUDA A ARMAR TU FIESTA</h1>
-                  <h3>Escribe el nombre de tu artista y grupos preferido y prepara tu lista de canciones para tu remix</h3>
+              <div class="col-md-12 text-center text-share">
+                  <h1>TEMAS</h1>
+                  <p class="m-20">Escribe el nombre de tu artista y grupos preferido y prepara tu lista de canciones para tu remix</p>
                   <form id="search-form" role="form">
                       <div class="form-group">
-                          <input type="text" id="query" value="" class="form-control" placeholder="Escribe el nombre de un Artista..."/>
+                          <input type="text" id="query" value="" class="form-control center-block" placeholder="Escribe el nombre de un Artista..."/>
                       </div>
-                      <button type="submit" id="search" class="btn btn-primary" />Buscar</button>
+                      <button type="submit" id="search" class="btn-inscribete" />Buscar</button>
                       <!--<button type="reset" id="search" class="btn btn-alert" />Limpiar</button>-->
                   </form>
               </div>
           </div>
           <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 content-resultados d-flex">
                   <div id="resultados">                   
                   </div>
               </div>        

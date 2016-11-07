@@ -9,29 +9,58 @@
     <title>Buscar Musica con Spotify Web API PHP</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="shortcut icon" type="img/png" href="img/icon.png">
 </head>
 <body>
-   <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>AYUDA A ARMAR TU FIESTA</h1>
-                <h3>Escribe el nombre de tu artista y grupos preferido y prepara tu lista de canciones para tu remix</h3>
-                <form id="search-form" role="form">
-                    <div class="form-group">
-                        <input type="text" id="query" value="" class="form-control" placeholder="Escribe el nombre de un Artista..."/>
-                    </div>
-                    <button type="submit" id="search" class="btn btn-primary" />Buscar</button>
-                    <!--<button type="reset" id="search" class="btn btn-alert" />Limpiar</button>-->
-                </form>
+    
+
+    <header>
+        <a href="index.html"><img src="img/logo.png" class="logo1 img-responsive"></a>
+    </header>
+    <section class="principal container">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="texto-view">
+                 <h1>ARMA TU FIESTA</h1>
+                 <p class="lh text-white">Somos una empresa con experiencia en el rubro de eventos, no especializamos en armar lo playlist para tu fiesta o evento especial</p>
+                 <p class="lh text-white">Arma tu lista buscando los temas de tus artistas favoritos y nosotros te armammos el mix perfecto.</p>
+                 <a href="#" class="btn-inscribete">Read More</a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="resultados">                   
-                </div>
-            </div>        
+        <div class="col-xs-12 col-sm-12  col-md-6 col-lg-6 none ">
+            <img src="img/1page-img.jpg" class="img-responsive">
         </div>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>AYUDA A ARMAR TU FIESTA</h1>
+                    <h3>Escribe el nombre de tu artista y grupos preferido y prepara tu lista de canciones para tu remix</h3>
+                    <form id="search-form" role="form">
+                        <div class="form-group">
+                            <input type="text" id="query" value="" class="form-control" placeholder="Escribe el nombre de un Artista..."/>
+                        </div>
+                        <button type="submit" id="search" class="btn btn-primary" />Buscar</button>
+                        <!--<button type="reset" id="search" class="btn btn-alert" />Limpiar</button>-->
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="resultados">                   
+                    </div>
+                </div>        
+            </div>
+        </div>
+    </section>
+    <section class="rock row">
+        <img class="col-xs-12 col-sm-12 col-md-6 col-lg-6 img-responsive" src="img/slider-img3.jpg">
+        <img class="col-xs-12 col-sm-12 col-md-6 col-lg-6 img-responsive" src="img/page4-img2.jpg">
+        <a class="btn btn-prymary boton-rock">Sound Rock</a>
+    </section>
+    <footer>
+        <img src="img/logo.png" class="logo">
+    </footer>
+
     <script src="js/handlebars-v4.0.0.js" type="text/javascript"></script>    
     <script id="resultados-template" type="text/x-handlebars-template">
         {{#each albums.items}}

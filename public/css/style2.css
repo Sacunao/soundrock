@@ -1,7 +1,7 @@
 /* fixed social*/
 #fixed-social {
   position: fixed;
-  top: 130px;
+  top: 250px;
   right: 0;
   z-index: 10;
 }

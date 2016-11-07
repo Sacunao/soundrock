@@ -16,7 +16,8 @@
 }
 
 .cover.playing {
-    border: 12px solid #e45343;    
+    border: 12px solid #e45343; 
+    border-radius: 50%;   
 }
 
 #resultados {
@@ -34,3 +35,4 @@
     white-space: nowrap;
     width: 500px;
 }
+

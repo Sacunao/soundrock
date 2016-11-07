@@ -21,13 +21,48 @@ footer{
 }
 
 .principal .texto-view h1 {
-	font-size: 5em;
+	font-size: 3em;
 	color: rgb(195, 198, 197);
 }
 
 .principal .texto-view p {
+	font-size: 1.5em;
 	margin-top: 20px;
 	color: rgb(159,159,159);
+	text-align: center;
+}
+
+.img-top{
+	margin: 40px 0;
+}
+.text.view img{
+	margin: 20px;
+}
+
+.m-20{
+	margin: 20px 0;
+}
+.text-share{
+	color: white;
+}
+
+.text-share p{
+	font-size: 17px;
+	padding: 20px 0;
+}
+
+#query{
+	width: 63%;
+}
+
+.d-flex{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-resultados{
+	padding: 20px;
 }
 
 .btn-inscribete {
@@ -36,11 +71,11 @@ footer{
 	margin-bottom: 10px;
 	color: white;
 	text-decoration: none;
-	padding: 13px 20px;
+	padding: 13px 40px;
 	background-color: rgba(0, 0, 0, 0.6);
 	border-radius: 10px;
 	transition:all 0.3s ease-in-out;
-	border: 1px solid rgb(216,74,229);
+	border: 2px solid rgb(216,74,229);
 }
 
 .btn-inscribete:hover {
@@ -121,7 +156,10 @@ footer{
    .rock .col-sm-12{
    	height: 250px;
    }
-
+	
+   #query{
+		width: 100%;
+	}	
    footer{
 	height: 15%;
 	padding: 2%;

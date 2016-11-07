@@ -1,8 +1,10 @@
 .cover {
     width: 200px;
     height: 200px;
+    margin: 10px 20px;
     display: inline-block;
     background-size: cover;  
+    
 }
 
 .nombre {
@@ -16,12 +18,13 @@
 }
 
 .cover.playing {
-    border: 12px solid #e45343;    
+    border: 12px solid rgb(216,74,229);    
 }
 
 #resultados {
-    margin-top: 20px;
+    padding-left: 5%;
     color: #000;
+    margin: 0 auto;
 }
 
 #login, #loggedin {

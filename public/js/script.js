@@ -1,25 +1,29 @@
-/*
-* Author:      Marco Kuiper (http://www.marcofolio.net/)
-*/
 google.load("jquery", "1.4.2");
 google.setOnLoadCallback(function()
 {
 	// Variable to store if the records are spinning
 	var playing = false;
-	
+	//var audioDj = audioObject;
 	// Variable to store if the mouse is down (to enable scratching)
 	var mousedown = false;
 	
 	// Function to be called when the play button is clicked.
 	// It changes from "play" to "pause" when records are spinning
 	// and starts both the vinyls.
+  
+  
+  
+  
+  
 	$("#playbutton").click(function() {
-		checkButtons();
+		//checkButtons();
 		if(playing) {
 			// Pause
+          audioDj.pause();
 			$("#playbtn").attr("src", "images/btn-play.png");
 			playing = false;
-			$(".vinyl").each(function() {
+          //Primer Disco
+          $("#vinyl1").each(function() {
 				// Clear the interval from the vinyl
 				// to stop spinning
 				var intervalHandle = $(this).data('intervalHandle');
@@ -29,11 +33,18 @@ google.setOnLoadCallback(function()
 					.stop()
 					.animate({rotate: '+=40deg'}, 800, 'easeOutCubic');				
 			});
+          
 		} else {
+          console.log(audioDj);
+           audioDj.play();
+          audioDj.setAttribute("loop","loop");
+       
+  
+            
 			// Play
 			$("#playbtn").attr("src", "images/btn-pause.png");
 			playing = true;
-			$(".vinyl").each(function() {
+			$("#vinyl1").each(function() {
 				$(this)
 					.css({ 'cursor' : 'move' })
 					.data('rotationAngle', 10);
@@ -46,7 +57,7 @@ google.setOnLoadCallback(function()
 	// We can't combine "mouseDown" with "mouseMove", so we'll need
 	// to set a boolean (mousedown).
 	// We're also clearing the intervals to prevent spinning
-	$(".vinyl").mousedown(function(e) {
+	$("#vinyl1").mousedown(function(e) {
 		var intervalHandle = $(this).data('intervalHandle');
 		clearInterval(intervalHandle);
 		mousedown = true;
@@ -60,7 +71,7 @@ google.setOnLoadCallback(function()
 	// When mousedown is true and the records are playing,
 	// we can scratch the vinyls. This is where the code can be improved,
 	// since we only register X-movement
-	$(".vinyl").mousemove(function(e){
+	$("#vinyl1").mousemove(function(e){
 		if(mousedown && playing) {
 			var intervalHandle = $(this).data('intervalHandle');
 			clearInterval(intervalHandle);
@@ -73,6 +84,7 @@ google.setOnLoadCallback(function()
 		if($(this).data('isEnabled')) {
 			$("#vinyl1").data('rotationAngle', $("#vinyl1").data('rotationAngle') + 10);
 		}
+        rewindAudio();
 		checkButtons();
 	});
 	
@@ -80,6 +92,7 @@ google.setOnLoadCallback(function()
 		if($(this).data('isEnabled')) {
 			$("#vinyl1").data('rotationAngle', $("#vinyl1").data('rotationAngle') - 10);
 		}
+      forwardAudio();
 		checkButtons();
 	});
 	
@@ -87,6 +100,7 @@ google.setOnLoadCallback(function()
 		if($(this).data('isEnabled')) {
 			$("#vinyl2").data('rotationAngle', $("#vinyl2").data('rotationAngle') + 10);
 		}
+      disminVelocAudio();
 		checkButtons();
 	});
 	
@@ -94,6 +108,7 @@ google.setOnLoadCallback(function()
 		if($(this).data('isEnabled')) {
 			$("#vinyl2").data('rotationAngle', $("#vinyl2").data('rotationAngle') - 10);
 		}
+      aumentVelocforwardAudio();
 		checkButtons();
 	});
 	
@@ -158,4 +173,66 @@ google.setOnLoadCallback(function()
 		}
 	}
 	
+  
+             // Rewinds the audio file by 30 seconds.
+
+        function rewindAudio() {
+             // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    //var oAudio = document.getElementById('myaudio');
+                  //audioObject.currentTime -= 50;
+                    audioDj.currentTime -= 10;
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                     if(window.console && console.error("Error:" + e));
+                }
+            }
+        }
+
+             // Fast forwards the audio file by 30 seconds.
+
+        function forwardAudio() {
+
+             // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    //var oAudio = document.getElementById('myaudio');
+                    audioDj.currentTime  += 10;
+                 
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                     if(window.console && console.error("Error:" + e));
+                }
+            }
+        }
+        function aumentVelocforwardAudio() {
+             // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    //var oAudio = document.getElementById('myaudio');
+                    audioDj.playbackRate -= 0.1;
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                     if(window.console && console.error("Error:" + e));
+                }
+            }
+        }
+        function disminVelocAudio() {
+                 // Check for audio element support.
+                if (window.HTMLAudioElement) {
+                    try {
+                        //var oAudio = document.getElementById('myaudio');
+                        audioDj.playbackRate += 0.2;
+                    }
+                    catch (e) {
+                        // Fail silently but show in F12 developer tools console
+                         if(window.console && console.error("Error:" + e));
+                    }
+                }
+            }
 });
+

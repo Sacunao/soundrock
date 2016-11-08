@@ -13,12 +13,14 @@
 
 .cover:hover {
     cursor: pointer;
+
 }
 
 .cover.playing {
     border: 12px solid #e45343; 
-    border-radius: 50%;   
-}
+    border-radius: 50%;  
+   
+ }
 
 #resultados {
     margin-top: 20px;

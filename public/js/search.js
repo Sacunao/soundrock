@@ -1,59 +1,62 @@
-  var templateSource = document.getElementById("resultados-template").innerHTML;
-      template = Handlebars.compile(templateSource);
-      resultadosPlaceholder = document.getElementById("resultados");
-      playingCssClass = "playing";
-      audioObject = null;
+var templateSource = document.getElementById("resultados-template").innerHTML;
+    template = Handlebars.compile(templateSource);
+    resultadosPlaceholder = document.getElementById("resultados");
+    playingCssClass = "playing";
+    audioObject = null;
 
-  var fetchTracks = function (albumId, callback) {
-      $.ajax({
-          url: "https://api.spotify.com/v1/albums/" + albumId,
-          success: function (response) {
-              callback(response);
-          }
-      });
-  };
+var audioDj = null;
 
-  var searchAlbums = function (query) {
-      $.ajax({
-          url: "https://api.spotify.com/v1/search",
-          data: {
-              q: query,
-              type: "album"
-          },
-          success: function (response) {
-              resultadosPlaceholder.innerHTML = template(response);
-          }
-      });
-  };
+var fetchTracks = function (albumId, callback) {
+    $.ajax({
+        url: "https://api.spotify.com/v1/albums/" + albumId,
+        success: function (response) {
+            callback(response);
+        }
+    });
+};
 
-  resultados.addEventListener("click", function (e) {
-      var target = e.target;
-      if (target !== null && target.classList.contains("cover")) {
-          if (target.classList.contains(playingCssClass)) {
-              audioObject.pause();
-          } else {
-              if (audioObject) {
-                  audioObject.pause();
-              }
-              fetchTracks(target.getAttribute("data-album-id"), function (data) {
-                  audioObject = new Audio(data.tracks.items[0].preview_url);
-                  audioObject.play();
-                  target.classList.add(playingCssClass);
-                  audioObject.addEventListener("ended", function () {
-                      target.classList.remove(playingCssClass);
-                  });
-                  audioObject.addEventListener("pause", function () {
-                      target.classList.remove(playingCssClass);
-                  });
-              });
-          }
-      }
-  });
+var searchAlbums = function (query) {
+    $.ajax({
+        url: "https://api.spotify.com/v1/search",
+        data: {
+            q: query,
+            type: "album"
+        },
+        success: function (response) {
+            resultadosPlaceholder.innerHTML = template(response);
+        }
+    });
+};
 
-  document.getElementById("search-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      searchAlbums(document.getElementById("query").value);
-      document.getElementById('query').value = "";
-  }, false);
+resultados.addEventListener("click", function (e) {
+    var target = e.target;
+    if (target !== null && target.classList.contains("cover")) {
+        if (target.classList.contains(playingCssClass)) {
+            audioObject.pause();
+        } else {
+            if (audioObject) {
+                audioObject.pause();
+            }
+            fetchTracks(target.getAttribute("data-album-id"), function (data) {
+                audioObject = new Audio(data.tracks.items[0].preview_url);
+                audioDj = new Audio(data.tracks.items[0].preview_url);
+                audioObject.play();
+                target.classList.add(playingCssClass);
+                audioObject.addEventListener("ended", function () {
+                    target.classList.remove(playingCssClass);
+                });
+                audioObject.addEventListener("pause", function () {
+                    target.classList.remove(playingCssClass);
+                });
+            });
+        }
+    }
+});
+
+document.getElementById("search-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    searchAlbums(document.getElementById("query").value);
+    document.getElementById('query').value = "";
+}, false);
 
 

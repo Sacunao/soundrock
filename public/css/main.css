@@ -6,11 +6,13 @@ body {
 }
 
 header {
-	padding-top: 3%;
+	height: 100vh;
 	text-align: center;
 	background-size: cover;
-	background-image: url(../img/header-bg2.jpg);
-	padding: 6% 0px 10% 9%;
+	background-position: center;
+	background-position-y: -80px; 
+	background-image: url(../img/portada.jpg);
+	background-repeat: no-repeat;
 }
 
 footer{
@@ -22,34 +24,64 @@ footer{
 }
 
 .principal .texto-view h1 {
-	font-size: 3em;
+	font-size: 5em;
 	color: rgb(195, 198, 197);
+	font-family: 'BebasNeue';
+	letter-spacing: 4px;
 }
 
 .principal .texto-view p {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	margin-top: 20px;
-	color: rgb(159,159,159);
+	color: white;
 	text-align: center;
+	padding: 0 30px;
+	letter-spacing: 4px;
 }
 
-.img-top{
-	margin: 40px 0;
-}
-.text.view img{
-	margin: 20px;
-}
 
 .m-20{
 	margin: 20px 0;
 }
-.text-share{
+
+.tema{
+	font-size: 4em;
+	color: rgb(195, 198, 197);
+	font-family: 'BebasNeue';
+	letter-spacing: 4px;
+}
+
+.text-white{
 	color: white;
 }
 
+.text-share{
+	padding-top: 80px;
+}
+
 .text-share p{
-	font-size: 17px;
-	padding: 20px 0;
+	padding: 0 40px;
+}
+
+.djplay{
+	background-size: cover;
+	background-image: url(../img/dj.jpg);
+	height: 80vh;
+	margin: 150px 0 30px 0;
+}
+
+.play{
+	font-size: 5em;
+	color: rgb(195, 198, 197);
+	font-family: 'BebasNeue';
+	letter-spacing: 4px;
+	padding-top: 12%;
+}
+
+.play-p{
+	color: white;
+	font-size: 1.2em;
+	letter-spacing: 3px;
 }
 
 #query{
@@ -58,8 +90,8 @@ footer{
 
 .d-flex{
 	display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-resultados{
@@ -133,10 +165,12 @@ footer{
 	margin-left: 30px;
 	width: 20%;
 }
-
+.portada{
+	height: 100vh;
+}
 .logo1{
-	width: 37%;
-    margin-left: 23.5%;
+	margin: 0 auto;
+	width: 30%;
 }
 
 .none{
@@ -145,7 +179,9 @@ footer{
 }
 
 @media only screen and (max-width: 480px) {
-
+	.logo1{
+		width: 70%;
+	}
 	.none{
 	display: none;
    }
@@ -174,6 +210,9 @@ footer{
 }
 
 @media only screen and (max-width: 960px) {
+	.logo1{
+		width: 60%;
+	}
 	.none{
 		display: none;
 	}

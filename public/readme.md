@@ -59,16 +59,14 @@ El modo de trabajo grupal es designado por funcionalidades. Para organizar tiemp
 
 ###CONTENIDO
 
-Página ofrece al usuario buscar temas con el nombre de sus artistas favoritos y simular la mezcla de sonidos en su fiesta.
+Página ofrece al usuario buscar temas con el nombre de sus artistas favoritos y simular efectos con la música elegida, asi el usuario puede mezclar con su canción seleccionada.
 
 
-![Imagen]("Imagen")
+![Imagen](http://2.1m.yt/EGrEwyR.png "Imagen")
 
-![Imagen]("Imagen")
+![Imagen](http://2.1m.yt/qtrcrWH.png "Imagen")
 
-![Imagen]("Imagen")
-
-![Imagen]("Imagen")
+![Imagen](http://1.1m.yt/slyDOMn.png "Imagen")
 
 
 ###REQUERIMIENTOS

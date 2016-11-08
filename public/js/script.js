@@ -10,12 +10,7 @@ google.setOnLoadCallback(function()
 	// Function to be called when the play button is clicked.
 	// It changes from "play" to "pause" when records are spinning
 	// and starts both the vinyls.
-  
-  
-  
-  
-  
-	$("#playbutton").click(function() {
+  	$("#playbutton").click(function() {
 		//checkButtons();
 		if(playing) {
 			// Pause

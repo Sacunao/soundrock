@@ -4,8 +4,6 @@ var templateSource = document.getElementById("resultados-template").innerHTML;
     playingCssClass = "playing";
     audioObject = null;
 
-var audioDj = null;
-
 var fetchTracks = function (albumId, callback) {
     $.ajax({
         url: "https://api.spotify.com/v1/albums/" + albumId,
@@ -39,7 +37,7 @@ resultados.addEventListener("click", function (e) {
             }
             fetchTracks(target.getAttribute("data-album-id"), function (data) {
                 audioObject = new Audio(data.tracks.items[0].preview_url);
-                audioDj = new Audio(data.tracks.items[0].preview_url);
+                 audioDj = new Audio(data.tracks.items[0].preview_url);
                 audioObject.play();
                 target.classList.add(playingCssClass);
                 audioObject.addEventListener("ended", function () {

@@ -15,13 +15,13 @@ header {
 	background-repeat: no-repeat;
 }
 
-footer{
+/*footer{
 	margin-top: 20%;
 	height: 200px;
 	padding: 2%;
 	background-size: cover;
 	background-image: url(../img/header-bg1.jpg);
-}
+}*/
 
 .principal .texto-view h1 {
 	font-size: 5em;
@@ -83,6 +83,10 @@ footer{
 	color: white;
 	font-size: 1.2em;
 	letter-spacing: 3px;
+}
+
+.d-inline{
+	display: inline-block;
 }
 
 #query{

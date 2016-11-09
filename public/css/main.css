@@ -85,6 +85,10 @@ header {
 	letter-spacing: 3px;
 }
 
+.d-inline{
+	display: inline-block;
+}
+
 #query{
 	width: 63%;
 }

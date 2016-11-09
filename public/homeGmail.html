@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>SoundRock</title>
-  <meta charset="utf-8">
+	<meta charset="UTF-8">
+	<title>SoundRock</title>
+	<meta charset="utf-8">
+    <meta name="google-signin-client_id" content="766741656408-mrga8qcbiu2tqbcog11uu1smqpk3jf57.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="@rebelbase">
@@ -87,6 +89,10 @@
   <section class="principal container">
     <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8">
       <div class="texto-view">
+          <div style="background-color: white">
+            <a href="#" id="gm" style="display: none"></a>
+            <div class="userContent"></div>
+          </div>
           <h1 class="text-center">ARMA TU FIESTA</h1>
           <div class="m-20">
             <p class="lh">SOUNDROCK. Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos. Nuestra trayectoria  de más de  20 años  garantizan un servicio de calidad. Te aseguramos que tu evento tendrá un mix personalizado y perfecto para ti.</p>
@@ -172,19 +178,9 @@
     </div>
   </section>
   <footer>
-      <section class="principal container">
-        <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8">
-          <div class="texto-view">
-              <div style="background-color: white">
-              Hola <span id="saludo"></span>  
-              (<a href="#" id="salir">Cerrar Sesion</a>)
-              <div id="foto" ></div>
-              </div>
-          </div>
-        </div>  
-      </section>
+      <!-- <img src="img/logo.png" class="logo"> -->
   </footer>
-  <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/handlebars-v4.0.0.js" type="text/javascript"></script>    
   <script id="resultados-template" type="text/x-handlebars-template">
@@ -193,6 +189,11 @@
           </div>     
       {{/each}}
   </script>
+  <script
+  src="//code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src= "js/gmail.js"></script>
   <script type="text/javascript" src="js/shared.js"></script>
   <script type="text/javascript" src="//www.google.com/jsapi"></script>
   <script type="text/javascript" src="js/script.js"></script>

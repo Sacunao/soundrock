@@ -2,6 +2,6 @@ var express = require("express");
 var app = express();
 
 app.use(express.static(__dirname + "/public"));
-app.listen(window.location.href,function(){
-	console.log("servidor soundRock encendido")
+app.listen(3006,function(){
+	console.log("servidor soundRock final encendido")
 });
